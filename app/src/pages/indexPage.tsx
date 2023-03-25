@@ -5,7 +5,6 @@ export default function IndexPage() {
         <section>
             <div>
                 <h1>Hello 👋</h1>
-                <Link to={"/app/"}>go to app</Link>
             </div>
         </section>
     </main>

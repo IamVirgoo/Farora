@@ -1,12 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+* {
+  --background-color : #181818;
+  --primary-color : #8B0E0E;
+  --main-text-color : rgba(255, 255, 255, 0.8);
+  --primary-letter-spacing : .25em;
+  --main-letter-spacing : .15em;
+}
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: Montserrat, sans-serif;
+  font-width: 300;
+  background-color: var(--background-color);
+  color : var(--main-text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   margin-block: 0;
   padding-block: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+a {
+  text-decoration: none;
 }

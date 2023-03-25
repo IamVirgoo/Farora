@@ -1,8 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import IndexPage from "./pages/indexPage";
-import AppOutlet from "./layout/AppOutlet";
-import AppIndex from "./pages/application/appIndex";
-import SecondPage from "./pages/application/secondPage";
+import WelcomePage from "./pages/welcomePage";
+import Registration from "./pages/registration";
 
 export const Router = createBrowserRouter([
     {
@@ -11,17 +10,11 @@ export const Router = createBrowserRouter([
         element : <IndexPage/>
     },
     {
-        path : '/app',
-        element : <AppOutlet/>,
-        children : [
-            {
-                index : true,
-                element : <AppIndex/>
-            },
-            {
-                path : 'second',
-                element : <SecondPage/>
-            }
-        ]
+        path : '/welcome',
+        element : <WelcomePage/>
+    },
+    {
+        path : '/registration',
+        element : <Registration/>
     }
 ])

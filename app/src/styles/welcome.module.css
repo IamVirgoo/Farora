@@ -1,0 +1,52 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heroContainer {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.heroContainerHeading {
+    font-size: 80px;
+    letter-spacing: var(--primary-letter-spacing);
+}
+
+.heroContainerHeading > span {
+    color : var(--primary-color)
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    height: 150px;
+}
+
+.circles {
+    position: relative;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 310px;
+    right: 0;
+    border-radius: 75px;
+    border: 1px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.circle {
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid var(--primary-color);
+}
