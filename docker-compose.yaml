@@ -3,6 +3,17 @@ services:
   nginx:
     image: nginx
     ports:
-      - 80:80
-      - 8080:8080
+      - "80:80"
+      - "8080:8080"
     restart: on-failure
+    volumes:
+      - ./app/dist:/var/www/html
+      - ./volumes/film:/var/www/media
+      - ./volumes/nginx/conf.d/:/etc/nginx/conf.d
+      - ./volumes/nginx/logs/nginx:/var/log/nginx
+    depends_on:
+      - pyFile
+  pyFile:
+    image: python
+    ports:
+      - "7090:7090"
