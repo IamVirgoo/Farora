@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import Header from "../components/header";
 
 import styles from '../styles/index.module.css'
+import Circle from "../assets/background/background-circle-1.svg";
 
 export default function IndexPage() {
-    return <main>
+    return <main style={{overflowX: "hidden"}}>
+        <img className={styles.firstCircle} src={Circle} alt=""/>
         <Header/>
         <section className={styles.hero}>
             <div className={styles.container}>

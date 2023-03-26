@@ -1,3 +1,37 @@
+.register_main {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.firstCircle {
+    position: absolute;
+    top: -500px;
+    left: -400px;
+    z-index: -9999;
+    mix-blend-mode: soft-light;
+    filter: blur(100px);
+}
+
+.secondCircle {
+    position: absolute;
+    bottom: -500px;
+    right: -450px;
+    z-index: -9999;
+    mix-blend-mode: soft-light;
+    filter: blur(100px);
+}
+
+.thirdCircle {
+    position: absolute;
+    bottom: -800px;
+    left: -100px;
+    z-index: -9999;
+    mix-blend-mode: soft-light;
+    filter: blur(100px);
+}
+
 .hero {
     margin-top: 70px
 }
@@ -142,4 +176,19 @@
 .dropdownPathContentChooseText {
     font-size: 16px;
     letter-spacing: var(--main-letter-spacing);
+}
+
+
+.button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 310px;
+    right: 200px;
+    bottom: 100px;
+    border-radius: 75px;
+    border: 1px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0);
 }

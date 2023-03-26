@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom'
 import styles from '../styles/welcome.module.css'
 
 import arrow from '../assets/arrow.svg'
+import Circle from "../assets/background/background-circle-1.svg";
 
 export default function WelcomePage() {
-    return <main>
+    return <main className={styles.welcome_main}>
+        <img className={styles.firstCircle} src={Circle} alt=""/>
+        <img className={styles.secondCircle} src={Circle} alt=""/>
+        <img className={styles.thirdCircle} src={Circle} alt=""/>
         <section className={styles.hero}>
             <div className={styles.heroContainer}>
                 <h1 className={styles.heroContainerHeading}>Welcome to <span>Farora</span> cinema service</h1>

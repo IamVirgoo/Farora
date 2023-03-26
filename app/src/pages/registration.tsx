@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { animated, config, useChain, useSpring, useSpringRef } from "react-spring";
 
+import Checkbox from "../components/checkbox";
+
 import styles from '../styles/registration.module.css'
-import checkbox from '../styles/checkbox.module.css'
 
 import arrow from '../assets/choose-arrow .svg'
 import longArrow from '../assets/arrow.svg'
-import Checkbox from "../components/checkbox";
-import {Link} from "react-router-dom";
+import Circle from '../assets/background/background-circle-1.svg'
 
 export default function Registration() {
     const [IsCheck, setIsCheck] = useState(false);
@@ -15,7 +16,10 @@ export default function Registration() {
     const [IsTritanopia, setIsTritanopia] = useState(false);
     const [IsMonochromacy, setIsMonochromacy] = useState(false);
     const [IsDeafness, setIsDeafness] = useState(false);
-    return <main>
+    return <main className={styles.register_main}>
+        <img className={styles.firstCircle} src={Circle} alt=""/>
+        <img className={styles.secondCircle} src={Circle} alt=""/>
+        <img className={styles.thirdCircle} src={Circle} alt=""/>
         <section className={styles.hero}>
             <div className={styles.container}>
                 <h1 className={styles.heading}>Tell us about yourself</h1>
@@ -67,5 +71,8 @@ export default function Registration() {
                 </div>
             </div>
         </section>
+        <Link className={styles.button} to={'/'}>
+            <img src={longArrow} alt=""/>
+        </Link>
     </main>
 }

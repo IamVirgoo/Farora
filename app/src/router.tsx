@@ -6,7 +6,6 @@ import Registration from "./pages/registration";
 export const Router = createBrowserRouter([
     {
         path : '/',
-        index : true,
         element : <IndexPage/>
     },
     {

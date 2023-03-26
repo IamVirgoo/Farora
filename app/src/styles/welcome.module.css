@@ -1,3 +1,37 @@
+.welcome_main {
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.firstCircle {
+    position: absolute;
+    top: -500px;
+    left: -400px;
+    z-index: -9999;
+    mix-blend-mode: soft-light;
+    filter: blur(100px);
+}
+
+.secondCircle {
+    position: absolute;
+    bottom: -500px;
+    right: -450px;
+    z-index: -9999;
+    mix-blend-mode: soft-light;
+    filter: blur(100px);
+}
+
+.thirdCircle {
+    position: absolute;
+    bottom: -800px;
+    left: -100px;
+    z-index: -9999;
+    mix-blend-mode: soft-light;
+    filter: blur(100px);
+}
+
 .hero {
     height: 100vh;
     display: flex;
