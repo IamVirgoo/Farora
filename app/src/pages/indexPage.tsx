@@ -19,7 +19,7 @@ export default function IndexPage() {
                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
                     </div>
-                    <Link className={styles.button} to={""}>
+                    <Link className={styles.button} to={"/0"}>
                         <p className={styles.buttonText}>Lets watch</p>
                     </Link>
                 </div>
