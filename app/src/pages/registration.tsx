@@ -11,11 +11,14 @@ import longArrow from '../assets/arrow.svg'
 import Circle from '../assets/background/background-circle-1.svg'
 
 export default function Registration() {
+    const [username, setUsername] = useState<string>("")
+
     const [IsCheck, setIsCheck] = useState(false);
     const [IsDeuteranopia, setIsDeuteranopia] = useState(false);
     const [IsTritanopia, setIsTritanopia] = useState(false);
     const [IsMonochromacy, setIsMonochromacy] = useState(false);
     const [IsDeafness, setIsDeafness] = useState(false);
+
     return <main className={styles.register_main}>
         <img className={styles.firstCircle} src={Circle} alt=""/>
         <img className={styles.secondCircle} src={Circle} alt=""/>
@@ -25,7 +28,8 @@ export default function Registration() {
                 <h1 className={styles.heading}>Tell us about yourself</h1>
                 <div className={styles.content}>
                     <div className={styles.form}>
-                        <input className={styles.input} type="text" placeholder={"Username"}/>
+                        <input className={styles.input} type="text" placeholder={"Username"}
+                               onChange={(event) => setUsername(event.target.value)}/>
                         <div className={styles.choose}>
                             <p className={styles.disability}>Do you have a disability?</p>
                             <div onChange={() => setIsCheck(!IsCheck)}><Checkbox check={IsCheck}/></div>
@@ -71,7 +75,15 @@ export default function Registration() {
                 </div>
             </div>
         </section>
-        <Link className={styles.button} to={'/'}>
+        <Link className={styles.button} to={'/'} onClick={() => {
+            localStorage.setItem("authenticated", "true");
+            localStorage.setItem("username", username);
+
+            if (IsMonochromacy) localStorage.setItem("daltonism", "monochromacy")
+            if (IsTritanopia) localStorage.setItem("daltonism", "tritanopia")
+            if (IsDeuteranopia) localStorage.setItem("daltonism", "deuteranopia")
+            if (IsDeafness) localStorage.setItem("disability", "deafness")
+        }}>
             <img src={longArrow} alt=""/>
         </Link>
     </main>

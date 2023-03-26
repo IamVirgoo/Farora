@@ -6,9 +6,9 @@ import styles from '../styles/index.module.css'
 import Circle from "../assets/background/background-circle-1.svg";
 
 export default function IndexPage() {
-    return <main style={{overflowX: "hidden"}}>
+    if (localStorage.getItem("authenticated") == "true") return <main style={{overflowX: "hidden"}}>
         <img className={styles.firstCircle} src={Circle} alt=""/>
-        <Header/>
+        <Header username={localStorage.getItem("username")}/>
         <section className={styles.hero}>
             <div className={styles.container}>
                 <div className={styles.content}>
@@ -54,4 +54,7 @@ export default function IndexPage() {
             </div>
         </section>
     </main>
+    else return <>
+        {window.location.href='/welcome'}
+    </>
 }
