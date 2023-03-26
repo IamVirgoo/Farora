@@ -1,7 +1,20 @@
-import Checkbox from '../components/checkbox'
+import { useState } from "react";
+import { animated, config, useChain, useSpring, useSpringRef } from "react-spring";
+
 import styles from '../styles/registration.module.css'
+import checkbox from '../styles/checkbox.module.css'
+
+import arrow from '../assets/choose-arrow .svg'
+import longArrow from '../assets/arrow.svg'
+import Checkbox from "../components/checkbox";
+import {Link} from "react-router-dom";
 
 export default function Registration() {
+    const [IsCheck, setIsCheck] = useState(false);
+    const [IsDeuteranopia, setIsDeuteranopia] = useState(false);
+    const [IsTritanopia, setIsTritanopia] = useState(false);
+    const [IsMonochromacy, setIsMonochromacy] = useState(false);
+    const [IsDeafness, setIsDeafness] = useState(false);
     return <main>
         <section className={styles.hero}>
             <div className={styles.container}>
@@ -11,7 +24,44 @@ export default function Registration() {
                         <input className={styles.input} type="text" placeholder={"Username"}/>
                         <div className={styles.choose}>
                             <p className={styles.disability}>Do you have a disability?</p>
-                            <Checkbox/>
+                            <div onChange={() => setIsCheck(!IsCheck)}><Checkbox check={IsCheck}/></div>
+                        </div>
+                        <div className={styles.dropdown}>
+                            <div className={styles.dropdownButton} style={IsCheck ? {visibility: "visible"} : {visibility: "hidden", display: "none"}}>
+                                <p className={styles.dropdownButtonText}>Choose what suits you</p>
+                                <img src={arrow} alt=""/>
+                            </div>
+                            <div className={styles.dropdownWrapper}/>
+                            <div className={styles.dropdownContent}>
+                                <div className={styles.dropdownPath}>
+                                    <p className={styles.dropdownPathHeading}>Daltonism</p>
+                                    <div className={styles.line}/>
+                                    <div className={styles.dropdownPathContent}>
+                                        <div className={styles.dropdownPathContentChoose}>
+                                            <p className={styles.dropdownPathContentChooseText}>Deuteranopia</p>
+                                            <div onChange={() => setIsDeuteranopia(!IsDeuteranopia)}><Checkbox check={IsDeuteranopia}/></div>
+                                        </div>
+                                        <div className={styles.dropdownPathContentChoose}>
+                                            <p className={styles.dropdownPathContentChooseText}>Tritanopia</p>
+                                            <div onChange={() => setIsTritanopia(!IsTritanopia)}><Checkbox check={IsTritanopia}/></div>
+                                        </div>
+                                        <div className={styles.dropdownPathContentChoose}>
+                                            <p className={styles.dropdownPathContentChooseText}>Monochromacy</p>
+                                            <div onChange={() => setIsMonochromacy(!IsMonochromacy)}><Checkbox check={IsMonochromacy}/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={styles.dropdownPath}>
+                                    <p className={styles.dropdownPathHeading}>Other</p>
+                                    <div className={styles.line}/>
+                                    <div className={styles.dropdownPathContent}>
+                                        <div className={styles.dropdownPathContentChoose}>
+                                            <p className={styles.dropdownPathContentChooseText}>Deafness</p>
+                                            <div onChange={() => setIsDeafness(!IsDeafness)}><Checkbox check={IsDeafness}/></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

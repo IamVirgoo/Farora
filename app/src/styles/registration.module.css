@@ -16,6 +16,10 @@
     padding-top: 100px
 }
 
+.form {
+    position: relative;
+}
+
 .input {
     width: 375px;
     height: 20px;
@@ -42,5 +46,100 @@
 
 .disability {
     font-size: 20px;
+    letter-spacing: var(--main-letter-spacing);
+}
+
+.dropdownButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    visibility: hidden;
+    width: 375px;
+    height: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.dropdownButtonText {
+    font-size: 20px;
+    letter-spacing: var(--main-letter-spacing);
+    color: var(--main-text-color);
+}
+
+.dropdownWrapper {
+    position: absolute;
+    left: 0;
+    width: 410px;
+    height: 25px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dropdownContent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    position: absolute;
+    left: 0;
+    margin-top: 23px;
+    padding: 10px 10px 10px 20px;
+    min-width: 500px;
+    background-color: rgba(255, 255, 255, 0);
+    visibility: hidden;
+    opacity: 0;
+    transition: 200ms ease-in;
+    border-radius: 0 10px 10px 10px;
+    border: 1px solid var(--primary-color);
+}
+
+.dropdown:hover {
+    transition: 200ms ease-in;
+}
+
+.dropdown:hover > .dropdownWrapper {
+    visibility: visible;
+}
+
+.dropdown:hover > .dropdownContent {
+    visibility: visible;
+    opacity: 1;
+    transition: 200ms ease-in;
+}
+
+.line {
+    width: 180px;
+    height: 1px;
+    background-color: var(--primary-color);
+}
+
+.dropdownPath {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dropdownPathContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.dropdownPathHeading {
+    font-size: 20px;
+    letter-spacing: var(--main-letter-spacing);
+}
+
+.dropdownPathContentChoose {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px
+}
+
+.dropdownPathContentChooseText {
+    font-size: 16px;
     letter-spacing: var(--main-letter-spacing);
 }
