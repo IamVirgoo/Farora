@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { animated, config, useChain, useSpring, useSpringRef } from "react-spring";
 
 import Checkbox from "../components/checkbox";
 

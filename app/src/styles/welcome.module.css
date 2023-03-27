@@ -39,17 +39,17 @@
     justify-content: center;
 }
 
-.heroContainer {
+.container {
     max-width: 1240px;
     margin: 0 auto;
 }
 
-.heroContainerHeading {
+.heading {
     font-size: 80px;
     letter-spacing: var(--primary-letter-spacing);
 }
 
-.heroContainerHeading > span {
+.heading > span {
     color : var(--primary-color)
 }
 

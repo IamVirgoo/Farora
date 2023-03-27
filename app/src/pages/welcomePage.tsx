@@ -11,8 +11,8 @@ export default function WelcomePage() {
         <img className={styles.secondCircle} src={Circle} alt=""/>
         <img className={styles.thirdCircle} src={Circle} alt=""/>
         <section className={styles.hero}>
-            <div className={styles.heroContainer}>
-                <h1 className={styles.heroContainerHeading}>Welcome to <span>Farora</span> cinema service</h1>
+            <div className={styles.container}>
+                <h1 className={styles.heading}>Welcome to <span>Farora</span> cinema service</h1>
                 <div className={styles.content}>
                     <div className={styles.circles}>
                         <div className={styles.circle}></div>
