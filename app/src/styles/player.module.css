@@ -1,3 +1,4 @@
+/*
 .app {
     display: flex;
     flex-direction: column;
@@ -11,7 +12,7 @@
     height: 500px;
 }
 
-/* Controls */
+!* Controls *!
 
 .controlsContainer {
     display: flex;
@@ -48,7 +49,7 @@
     margin-right: 10rem;
 }
 
-/* The time controls section */
+!* The time controls section *!
 
 .timesControls {
     position: relative;
@@ -76,9 +77,10 @@
 
 .controlsTime {
     position: absolute;
-    right: -50px;
+    right: -70px;
     color: var(--main-text-color);
 }
+*/
 
 /*-------------------*/
 
@@ -106,7 +108,6 @@
 }
 
 .videoContainer {
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -118,10 +119,66 @@
 .video {
     width: 100%;
     height: 80vh;
-    mix-blend-mode: soft-light;
+}
+
+.timeControls {}
+
+.barWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.progressContainer {
+    position: relative;
+    width: 1430px;
+    height: 5px;
 }
 
 .progressBarContainer {
-    height: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 15px;
     background-color: var(--main-text-color);
+}
+
+.time_progressBar {
+    position: absolute;
+    height: 100%;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    transition: 100ms ease-in;
+}
+
+.controlsTime {
+    font-size: 16px;
+    letter-spacing: var(--main-letter-spacing);
+}
+
+.controlsWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftControls,
+.rightControls {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.button {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    user-select: none;
+}
+
+img {
+    z-index: -1;
 }
