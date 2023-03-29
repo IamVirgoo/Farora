@@ -1,98 +1,58 @@
-.player {
-    height: 90vh;
+.imageWrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 450px;
+    background-image: url("../assets/come-and-see-thumb.jpg");
+    background-position: center;
+    box-shadow: inset 0 -50px 40px 10px var(--background-color);
+    background-repeat: no-repeat;
 }
 
 .container {
-    max-width: 1440px;
-    margin: 0 auto
+    max-width: 1240px;
+    margin: 0 auto;
 }
 
-.title {
-    font-size: 59px;
-    text-align: end;
-    letter-spacing: var(--primary-letter-spacing);
-    padding-top: 10px;
-}
-
-.description {
-    font-size: 24px;
-    text-align: end;
-    letter-spacing: var(--main-letter-spacing);
-    padding-bottom: 10px;
-}
-
-.videoContainer {
+.headingContent {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    z-index: -1;
+    align-items: flex-start;
+    gap: 50px
+}
+
+.poster {
+    width: 250px;
+    height: 350px;
+    box-shadow: 0 0 20px var(--primary-color);
+    border-radius: 5px;
+}
+
+.movieInformation {
+    max-width: 1000px;
+}
+
+.movieTitle {
+    font-size: 59px;
+    letter-spacing: var(--primary-letter-spacing);
+    color: var(--primary-color);
+    padding-bottom: 30px;
+}
+
+.movieDescription {
+    font-size: 24px;
+    letter-spacing: var(--main-letter-spacing);
 }
 
 .video {
+    padding: 50px 0
+}
+
+.videoHeading {
+    font-size: 48px;
+    letter-spacing: var(--primary-letter-spacing);
+    padding-bottom: 50px;
+}
+
+video {
     width: 100%;
-    height: 80vh;
-}
-
-.timeControls {}
-
-.barWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding-bottom: 5px;
-}
-
-.progressContainer {
-    position: relative;
-    width: 1430px;
-    height: 5px;
-}
-
-.progressBarContainer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 100%;
-    border-radius: 15px;
-    background-color: var(--main-text-color);
-}
-
-.time_progressBar {
-    position: absolute;
-    height: 100%;
-    border-radius: 15px;
-    background-color: var(--primary-color);
-    transition: 100ms ease-in;
-}
-
-.controlsTime {
-    font-size: 16px;
-    letter-spacing: var(--main-letter-spacing);
-}
-
-.controlsWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.leftControls,
-.rightControls {
-    display: flex;
-    align-items: center;
-    gap: 20px
-}
-
-.button {
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    user-select: none;
-}
-
-img {
-    z-index: -1;
 }

@@ -12,134 +12,38 @@ import nonSubtitles from '../../assets/player/non-subtitles.svg';
 import full from '../../assets/player/full.svg';
 import collapseFull from '../../assets/player/collapse-full.svg'
 
-import film from '../../../../volumes/film/bunny.mp4'
+import film from '../../../../volumes/film/come-and-see-trailer.mp4'
+import Header from "../../components/header";
+
+import filmPreview from '../../assets/come-and-see-thumb.jpg'
+import filmPoster from '../../assets/come-and-see-poster.jpg'
 
 const Player = (props : any) => {
-    const videoRef = useRef(null);
-    const [playing, setPlaying] = useState(false);
-    const [IsFullscreen, setIsFullscreen] = useState(false);
-    const [IsSubtitles, setIsSubtitles] = localStorage.getItem("disability") == "deafness" ?
-        useState(true) : useState(false);
-    const [currentTime, setCurrentTime] = useState(0);
-    const [videoTime, setVideoTime] = useState(0);
-    const [progress, setProgress] = useState(0);
-
-    const videoHandler = (control: string) => {
-        if (control === "play") {
-            // @ts-ignore
-            videoRef.current.play();
-            setPlaying(true);
-            let vid = document.getElementById("video1");
-            // @ts-ignore
-            setVideoTime(vid.duration);
-        } else if (control === "pause") {
-            // @ts-ignore
-            videoRef.current.pause();
-            setPlaying(false);
-        }
-    };
-
-    const forward = () => {
-        // @ts-ignore
-        videoRef.current.currentTime += 10;
-    };
-
-    const revert = () => {
-        // @ts-ignore
-        videoRef.current.currentTime -= 10;
-    };
-
-    window.setInterval(function () {
-        // @ts-ignore
-        setCurrentTime(videoRef.current?.currentTime);
-        // @ts-ignore
-        setProgress((videoRef.current?.currentTime / videoTime) * 100);
-    }, 1000);
-
     return <main>
-        <section className={styles.player}>
+        <Header username={localStorage.getItem("username")}/>
+        <section className={styles.hero}>
+            <div className={styles.imageWrapper}/>
             <div className={styles.container}>
-                <h1 className={styles.title}>{props.movieTitle || "Movie Title"}</h1>
-                <div className={styles.videoContainer}>
-                    <video
-                        id="video1"
-                        ref={videoRef}
-                        className={styles.video}
-                        src={film}
-                    ></video>
-                    <div className={styles.timeControls}>
-                        <div className={styles.barWrapper}>
-                            <div className={styles.progressContainer}>
-                                <div className={styles.progressBarContainer}>
-                                    <div style={{ width: `${progress}%` }} className={styles.time_progressBar}/>
-                                </div>
-                            </div>
-                            <div className={styles.time}>
-                                <p className={styles.controlsTime}>
-                                    {Math.floor(currentTime / 60) +
-                                        ":" +
-                                        ("0" + Math.floor(currentTime % 60)).slice(-2)
-                                    }
-                                </p>
-                            </div>
-                        </div>
-                        <div className={styles.controlsWrapper}>
-                            <div className={styles.leftControls}>
-                                {playing ? <div onClick={() => videoHandler("pause")} className={styles.button}>
-                                        <img
-                                            alt={''}
-                                            src={pause}
-                                        />
-                                    </div>
-                                    : <div onClick={() => videoHandler("play")} className={styles.button}>
-                                        <img
-                                            alt={''}
-                                            src={play}
-                                        />
-                                    </div>
-                                }
-                                <div onClick={revert} className={styles.button}>
-                                    <img
-                                        alt={''}
-                                        src={revertImg}
-                                    />
-                                </div>
-                                <div onClick={forward} className={styles.button}>
-                                    <img
-                                        alt={''}
-                                        src={forwardImg}
-                                    />
-                                </div>
-                            </div>
-                            <div className={styles.rightControls}>
-                                { IsSubtitles ? <div className={styles.button} onClick={() => setIsSubtitles(!IsSubtitles)}>
-                                    <img
-                                        alt={''}
-                                        src={subtitles}
-                                    />
-                                </div>
-                                    : <div className={styles.button} onClick={() => setIsSubtitles(!IsSubtitles)}>
-                                        <img
-                                            alt={''}
-                                            src={nonSubtitles}
-                                        />
-                                    </div>
-                                }
-                                <div className={styles.button}>
-                                    <img
-                                        alt={''}
-                                        src={settings}
-                                    />
-                                </div>
-                                <div className={styles.button}>
-                                    <img
-                                        alt={''}
-                                        src={full}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                <div className={styles.headingContent}>
+                    <img className={styles.poster} src={filmPoster} alt=""/>
+                    <div className={styles.movieInformation}>
+                        <h1 className={styles.movieTitle}>Come and see</h1>
+                        <p className={styles.movieDescription}>
+                            The film's plot focuses on the Nazi German occupation of Belarus, a
+                            nd the events as witnessed by a young Belarusian partisan teenager named Flyora,
+                            who—against his mother's wishes—joins the Belarusian resistance movement,
+                            and thereafter depicts the Nazi atrocities and human suffering inflicted upon the
+                            Eastern European region's populace.
+                        </p>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section className={styles.video}>
+            <div className={styles.container}>
+                <div className={styles.videoContent}>
+                    <h2 className={styles.videoHeading}>Let's Watch</h2>
+                    <video src={film} controls></video>
                 </div>
             </div>
         </section>
